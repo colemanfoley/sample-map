@@ -1,9 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+<script type="text/javascript" src="http://mbostock.github.com/d3/d3.layout.js"></script>
+</head>
+<body>
+<script type="text/javascript">
 
 var w = 960,
     h = 500
 
-var vis = d3.select("#browser")
-  .append("svg:svg")
+var vis = d3.select("body").append("svg:svg")
     .attr("width", w)
     .attr("height", h);
 
@@ -34,11 +41,11 @@ d3.json(level, function(json) {
 
     node.append("svg:image")
         .attr("class", "circle")
-        .attr("xlink:href", function(d) { return "circle" + (d.group ? "" : "_hub") + ".png"; })
-        .attr("x", "-10px")
-        .attr("y", "-10px")
-        .attr("width", "20px")
-        .attr("height", "20px");
+        .attr("xlink:href", "https://d3nwyuy0nl342s.cloudfront.net/images/icons/public.png")
+        .attr("x", "-8px")
+        .attr("y", "-8px")
+        .attr("width", "16px")
+        .attr("height", "16px");
 
     node.append("svg:text")
         .attr("class", "nodetext")
@@ -55,3 +62,7 @@ d3.json(level, function(json) {
       node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
     });
 });
+
+</script>
+</body>
+</html>
